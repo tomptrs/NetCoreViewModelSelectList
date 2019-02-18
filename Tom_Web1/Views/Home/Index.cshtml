@@ -1,0 +1,19 @@
+﻿@model GebruikersPerProjectViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@{ 
+    var g = Model.gebruiker;
+}
+
+<form asp-controller="Home" asp-action="Index" method="get">
+    <select asp-for="Id" asp-items="Model.AllProjects">
+        <option value="0">-- Select a rating --</option>
+    </select>
+    <input type="submit" value="Filter" />
+</form>
+
+<input type="text" value="@Model.gebruiker.FirstName" />
